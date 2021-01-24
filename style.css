@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css?family=Chewy&display=swap');
+
+:root {
+    --dark-border: #e2e2e2;
+    --light-fill: #f2f2f2;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    height: 60vmin;
+    width: 80vmin;
+    border-radius: 3.6vmin;
+    border: 3vmin solid var(--dark-border);
+    background: var(--light-fill);
+    margin-bottom: 1vmin;
+    transition: 0.5s;
+}
+
+/* .container.move {
+    height: 7vmin;
+} */
+
+.board {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* pointer-events: none; */
+}
+
+.block {
+    width: 16.66666667%;
+    height: 33%;
+    display: flex;
+    flex-direction: column;
+    /* pointer-events: none; */
+    transition: 0.5s;
+}
+
+/* .block.move {
+    width: 5.55555556%;
+    height: 50%;
+} */
+
+.order {
+    /*   background: green; */
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    /* pointer-events: none; */
+    border-radius: 1vmin;
+}
+
+.orderSub, .numberSub {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.numberSub {
+    top: -1vmin;
+}
+
+.block .number {
+    /*   width: 100%; */
+    /*   background: red; */
+    flex-grow: 1;
+    position: relative;
+}
+
+.hovered {
+    background: rgba(0,0,0,0.15);
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+}
+
+.playButtons button {
+    width: 49%;
+    border: none;
+    color: White;
+    font-size: 6vmin;
+    text-align: center;
+    font-family: 'Chewy', cursive;
+    height: 12vmin;
+    border-radius: 3.6vmin;
+    cursor: pointer;
+}
+
+#play {
+    background: rgb(250, 150, 50);
+}
+
+#play:active {
+    background: rgb(250, 120, 50);
+}
+
+#reset {
+    background: rgb(250, 50, 50);
+}
+
+#reset:active {
+    background: rgb(250, 100, 100);
+}
+
+
+.playButtons {
+    margin-top: 1vmin;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* height: 10vmin;
+    background: rgb(250, 170, 70);
+    border-radius: 3.6vmin; */
+}
+
+.tabsFull {
+    width: 100%;
+    display: flex;
+    /* align-items: stretch; */
+    margin-top: 2vmin;
+    /* height: 100%; */
+    align-content: center;
+    transition: 0.7s;
+    height: 16vmin;
+    border-radius: 2vmin;
+}
+
+.height {
+    width: 25%;
+}
+
+#tabButtons {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+#tabButtons button {
+    border: none;
+    cursor: pointer;
+    height: 33.3333%;
+    font-family: 'Chewy', cursive;
+    font-size: 3vmin;
+    border-radius: 2vmin 0 0 2vmin;
+    background: var(--light-fill);
+}
+
+#tabButtons button.active{
+    color: white;
+}
+
+#tabButtons #arrows.active{
+    background: #88c543;
+}
+
+#tabButtons #numbers.active{
+    background: #0bbee9;
+}
+
+#tabButtons #extra.active{
+    background: #7b25b0;
+}
+
+.storeContainer.active {
+    width: 100%;
+    /* background: grey; */
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--dark-border);
+    border-radius: 0 2vmin 2vmin 0;
+    align-items: center;
+}
+
+.storeContainer {
+    display: none;
+}
+
+/* .tabsFull.move {
+    height: 0;
+    width: 0;
+    transition: 0.4s;
+} */
+
+/* .tabsFull.move .height #tabButtons Button{
+    font-size: 0;
+} */
+
+.storeContainer .store {
+    width: 20%;
+    border-radius: 1vmin;
+    position: relative;
+}
+
+.storeContainer .store.arrow {
+    height: 86%;
+}
+
+.storeContainer .store.number {
+    height: 46%;
+}
+
+.storeContainer .store.extra {
+    height: 86%;
+}
+
+.storedOrder {
+    /* width: 100%; */
+    /* height: 100%; */
+    /* padding-top: 100%; */
+    position: relative;
+    background: #fafafa;
+    border-radius: 1vmin;
+}
+
+/* #myCanvas.float.move {
+    width: 80vmin;
+    height: 60vmin;
+    border: 3vmin solid var(--dark-border);
+    background: var(--light-fill);
+    position: relative;
+    transition: 0s;
+    top: 50%;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    margin-top: -30vmin;
+    margin-left: -40vmin;
+    box-shadow: 0 0 0 rgba(0,0,0,0.3);
+    border-radius: 3vmin;
+} */
+
+/* #myCanvas.float.move {
+    transform: scale(2);
+    top: 50%;
+    left: 50%;
+    bottom: 0;
+    right: 0;
+} */
+
+#myCanvas {
+    position: relative;
+    height: 0;
+    border: 0vmin solid var(--dark-border);
+    transition: 0s;
+    background: var(--light-fill);
+}
+
+#myCanvas.float {
+    position: fixed;
+    height: 30vmin;
+    border: 1vmin solid var(--dark-border);
+    border-radius: 1vmin;
+    top: 10px;
+    right: 10px;
+    cursor: move;
+    z-index: 2000;
+    transition: 0s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
