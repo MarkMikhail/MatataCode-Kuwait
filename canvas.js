@@ -41,10 +41,26 @@ function startBoard(maze, init = [1,4,0]){
     myRobot = new robot(boardCanvas.grid.getx(init[0]), boardCanvas.grid.gety(init[1]), init[2]);
     background = new Image();
     background.src = maze;
-    background.onload = function(){
-        boardCanvas.start();
-    }
+    boardCanvas.start();
+    // background.onload = function(){
+    //     boardCanvas.start();
+    // }
 }
+
+document.querySelector('#upload').addEventListener('change', function() {
+    if (this.files && this.files[0]) {
+        // const img = document.querySelector('img');  // $('img')[0]
+        // img.src = URL.createObjectURL(this.files[0]); // set src to blob url
+        // img.onload = imageIsLoaded;
+
+        // startBoard(URL.createObjectURL(this.files[0]));
+        background.src = URL.createObjectURL(this.files[0]);
+    }
+});
+
+// function imageIsLoaded() {
+//     startBoard(this.src);
+// }
 
 function robot(X, Y, R, color = 'orange', ) {
     this.x = X;
@@ -67,7 +83,7 @@ function robot(X, Y, R, color = 'orange', ) {
 
         size = boardCanvas.grid.scale*0.4;
         radius = Math.sqrt(Math.pow(size/2,2)*2);
-        
+
         triangle = new Path2D();
         triangle.moveTo(this.x+radius*Math.sin(this.r),this.y-radius*Math.cos(this.r));
         triangle.lineTo(this.x+radius*Math.sin(this.r+(2*Math.PI/3)),this.y-radius*Math.cos(this.r+(2*Math.PI/3)));
@@ -98,7 +114,7 @@ function robot(X, Y, R, color = 'orange', ) {
 function updateBoardArea(){
 
     boardCanvas.clear();
-    
+
     boardCanvas.context.drawImage(background, 0, 0, boardCanvas.canvas.width, boardCanvas.canvas.height);
     newPos();
     myRobot.pen();

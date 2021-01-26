@@ -93,8 +93,16 @@ body {
     box-shadow: 0 0 15px rgba(0,0,0,0.15);
 }
 
-.playButtons button {
-    width: 49%;
+div.playButtons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+.playButtons button, #upload-btn {
+    flex-grow: 1;
     border: none;
     color: White;
     font-size: 6vmin;
@@ -105,8 +113,20 @@ body {
     cursor: pointer;
 }
 
+#upload-btn {
+    background: #3f88db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#upload-btn:active {
+    background: #5da2f0;
+}
+
 #play {
     background: rgb(250, 150, 50);
+    flex-grow: 2;
 }
 
 #play:active {
@@ -115,6 +135,7 @@ body {
 
 #reset {
     background: rgb(250, 50, 50);
+    margin: 0 10px;
 }
 
 #reset:active {

@@ -8,7 +8,7 @@
     <title>MatataCode</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="startBoard('mazes/maze9.png')">
+<body onload="startBoard('mazes/maze2021.jpg')">
 	<div class="main-container">
 		<div class="container">
 			<div class="board">
@@ -17,17 +17,21 @@
 						
 					</div>
 					<div class="number">
-					
+
 					</div>
 				</div>
 			</div>
 		</div>
-		
+
 		<canvas class="float" id="myCanvas" width="800" height="640"></canvas>
 
 		<div class="playButtons">
 			<button id="play"><i class="fas fa-play"></i></button>
 			<button id="reset"><i class="fas fa-redo-alt"></i></button>
+			<label id="upload-btn">
+				<input type="file" id="upload" style="display: none;" accept='image/*'>
+				<i class="fas fa-camera-retro"></i>
+			</label>
 		</div>
 
 		<div class="tabsFull" id="stores">

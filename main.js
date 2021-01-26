@@ -11,8 +11,8 @@ repeatNode(document.querySelector(".two"), 2, true);
 repeatNode(document.querySelector(".three"), 2, true);
 repeatNode(document.querySelector(".four"), 2, true);
 repeatNode(document.querySelector(".five"), 2, true);
-repeatNode(document.querySelector(".start"), 2, true);
-repeatNode(document.querySelector(".stop"), 2, true);
+repeatNode(document.querySelector(".start"), 1, true);
+repeatNode(document.querySelector(".stop"), 1, true);
 
 const orderEmpty = document.querySelectorAll(".order");
 const numberEmpty = document.querySelectorAll(".block .number");
