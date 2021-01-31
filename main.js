@@ -252,7 +252,8 @@ function floatDragProcess(ev){
     try {
         ev = ev.targetTouches[0];
     } catch {} finally {
-        if (floatSelected) {
+        const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+        if (floatSelected && width < 850) {
             // console.log('event triggered');
             float.style.top = ev.clientY + offset[1] + 'px';
             // float.style.bottom = - parseInt(float.style.top) + 'px';

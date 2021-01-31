@@ -32,6 +32,7 @@ body {
     background: var(--light-fill);
     margin-bottom: 1vmin;
     transition: 0.5s;
+    flex-shrink: 1;
 }
 
 /* .container.move {
@@ -151,9 +152,11 @@ div.playButtons {
     /* height: 10vmin;
     background: rgb(250, 170, 70);
     border-radius: 3.6vmin; */
+    max-width: 100vmin;
 }
 
 .tabsFull {
+    max-width: 100vmin;
     width: 100%;
     display: flex;
     /* align-items: stretch; */
@@ -234,6 +237,7 @@ div.playButtons {
 
 .storeContainer .store.arrow {
     height: 86%;
+    max-width: 14vmin;
 }
 
 .storeContainer .store.number {
@@ -242,6 +246,7 @@ div.playButtons {
 
 .storeContainer .store.extra {
     height: 86%;
+    max-width: 14vmin;
 }
 
 .storedOrder {
@@ -297,4 +302,31 @@ div.playButtons {
     z-index: 2000;
     transition: 0s;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin: 0;
+}
+
+@media only screen and (min-width: 850px) {
+    #myCanvas.float {
+        position: relative;
+        height: 60vmin;
+        width: 80vmin;
+        cursor: default;
+        margin-bottom: 1vmin;
+        margin-left: 2%;
+        box-shadow: none;
+        border-width: 3vmin;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 3.6vmin;
+        flex-shrink: 1;
+    }
+
+    .flex-desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
 }
